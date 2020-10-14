@@ -5,12 +5,15 @@
 
 
 class EmailAddressParser
+
+  attr_accessor :emails
+
   def initialize(emails)
     @emails = emails
   end
 
   def parse
-    @emails.scan(/[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}/i).uniq
+    :emails.scan(/[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}/i).uniq
   end
 
 
